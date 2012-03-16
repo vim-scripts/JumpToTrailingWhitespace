@@ -1,0 +1,25 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3968
+
+DESCRIPTION
+This plugin provides movement commands to quickly go to whitespace at the end
+of each line. (Usually in order to remove it).
+
+RELATED WORKS
+This plugin leverages the superior detection and customization facilities of
+the companion ShowTrailingWhitespace.vim plugin (vimscript #3966), though it
+can also be used without it if you're not interested in highlighting and
+customizing.
+
+Instead of jumping and deleting each occurrence manually, you can use the
+companion DeleteTrailingWhitespace.vim (vimscript #3967) plugin to strip off
+the trailing whitespace with one command, or even have this done automatically
+on each write.
+
+USAGE
+]$                      Go to [count] next occurrence of trailing whitespace.
+[$                      Go to [count] previous occurrence of trailing
+                        whitespace.
+
+Normal, operator-pending, and visual mode mappings are defined, even though
+the latter two are typically less useful that the normal mode mappings. The
+'wrapscan' setting applies.
