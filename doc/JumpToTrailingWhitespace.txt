@@ -20,12 +20,12 @@ of each line. (Usually in order to remove it).
 RELATED WORKS								     *
 
 This plugin leverages the superior detection and customization facilities of
-the companion |ShowTrailingWhitespace.vim| plugin (vimscript #0000), though it
+the companion |ShowTrailingWhitespace.vim| plugin (vimscript #3966), though it
 can also be used without it if you're not interested in highlighting and
 customizing.
 
 Instead of jumping and deleting each occurrence manually, you can use the
-companion |DeleteTrailingWhitespace.vim| (vimscript #0000) plugin to strip off
+companion |DeleteTrailingWhitespace.vim| (vimscript #3967) plugin to strip off
 the trailing whitespace with one command, or even have this done automatically
 on each write.
 
@@ -55,7 +55,7 @@ DEPENDENCIES			       *JumpToTrailingWhitespace-dependencies*
 
 - Requires Vim 7.0 or higher.
 - Requires the CountJump plugin (vimscript #3130).
-- The |ShowTrailingWhitespace.vim| plugin (vimscript #0000) complements this
+- The |ShowTrailingWhitespace.vim| plugin (vimscript #3966) complements this
   script, but is not required. With it, the jumps consider the whitespace
   exceptions for certain filetypes.
 
@@ -64,10 +64,12 @@ CONFIGURATION			      *JumpToTrailingWhitespace-configuration*
 
 For a permanent configuration, put the following commands into your |vimrc|:
 
-					  *g:JumpToTrailingWhitespace_mapping*
+					  *g:JumpToTrailingWhitespace_Mapping*
 To change the default mappings from ]$ to ]x, use: >
-    let g:JumpToTrailingWhitespace_mapping = 'x'
-<
+    let g:JumpToTrailingWhitespace_Mapping = 'x'
+To also change the [ / ] prefix to something else, follow the instructions for
+|CountJump-remap-motions|. (This requires CountJump 1.60.)
+
 ==============================================================================
 LIMITATIONS				*JumpToTrailingWhitespace-limitations*
 
@@ -79,6 +81,11 @@ IDEAS					      *JumpToTrailingWhitespace-ideas*
 
 ==============================================================================
 HISTORY					    *JumpToTrailingWhitespace-history*
+
+1.01    28-Mar-2012
+- CHG: Change g:JumpToTrailingWhitespace_mapping to
+  g:JumpToTrailingWhitespace_Mapping.
+- Document changing of [ / ] prefix through new CountJump 1.60.
 
 1.00	16-Mar-2012
 First published version.

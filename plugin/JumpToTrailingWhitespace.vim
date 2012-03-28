@@ -10,6 +10,8 @@
 " Maintainer:	Ingo Karkat <ingo@karkat.de>
 "
 " REVISION	DATE		REMARKS
+"   1.01.002    28-Mar-2012     Change g:JumpToTrailingWhitespace_mapping to
+"				g:JumpToTrailingWhitespace_Mapping.
 "   1.00.001	07-Mar-2012	file creation
 
 " Avoid installing twice or when in unsupported Vim version.
@@ -22,8 +24,8 @@ set cpo&vim
 
 "- configuration ---------------------------------------------------------------
 
-if ! exists('g:JumpToTrailingWhitespace_mapping')
-    let g:JumpToTrailingWhitespace_mapping = '$'
+if ! exists('g:JumpToTrailingWhitespace_Mapping')
+    let g:JumpToTrailingWhitespace_Mapping = '$'
 endif
 
 
@@ -48,7 +50,7 @@ endfunction
 
 "- mappings --------------------------------------------------------------------
 
-call CountJump#Motion#MakeBracketMotionWithJumpFunctions('', g:JumpToTrailingWhitespace_mapping, '',
+call CountJump#Motion#MakeBracketMotionWithJumpFunctions('', g:JumpToTrailingWhitespace_Mapping, '',
 \   function('JumpToTrailingWhitespace#Forward'),
 \   function('JumpToTrailingWhitespace#Backward'),
 \   '', '', 0)
