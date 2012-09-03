@@ -1,7 +1,8 @@
 " JumpToTrailingWhitespace.vim: Motions to locate unwanted whitespace at the end of lines.
 "
 " DEPENDENCIES:
-"   - CountJump.vim, CountJump/Motion.vim autoload scripts
+"   - CountJump.vim, CountJump/Motion.vim autoload scripts, version 1.70 or
+"     higher
 "   - ShowTrailingWhitespace.vim autoload script (optional)
 "
 " Copyright: (C) 2012 Ingo Karkat
@@ -10,6 +11,11 @@
 " Maintainer:	Ingo Karkat <ingo@karkat.de>
 "
 " REVISION	DATE		REMARKS
+"   1.10.003	17-Aug-2012	As the search obeys the 'wrapscan' setting, also
+"				issue corresponding "trailing whitespace search
+"				hit BOTTOM, continuing at TOP" wrap warning
+"				messages. This requires the enhanced CountJump
+"				plugin version 1.70.
 "   1.01.002    28-Mar-2012     Change g:JumpToTrailingWhitespace_mapping to
 "				g:JumpToTrailingWhitespace_Mapping.
 "   1.00.001	07-Mar-2012	file creation
@@ -41,10 +47,10 @@ function! s:Pattern()
 endfunction
 
 function! JumpToTrailingWhitespace#Forward( mode )
-    call CountJump#CountJump(a:mode, s:Pattern(), '')
+    call CountJump#CountJumpWithWrapMessage(a:mode, 'trailing whitespace search', s:Pattern(), '')
 endfunction
 function! JumpToTrailingWhitespace#Backward( mode )
-    call CountJump#CountJump(a:mode, s:Pattern(), 'b')
+    call CountJump#CountJumpWithWrapMessage(a:mode, 'trailing whitespace search', s:Pattern(), 'b')
 endfunction
 
 

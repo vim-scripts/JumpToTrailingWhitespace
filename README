@@ -4,7 +4,7 @@ DESCRIPTION
 This plugin provides movement commands to quickly go to whitespace at the end
 of each line. (Usually in order to remove it).
 
-RELATED WORKS
+SEE ALSO
 This plugin leverages the superior detection and customization facilities of
 the companion ShowTrailingWhitespace.vim plugin (vimscript #3966), though it
 can also be used without it if you're not interested in highlighting and
